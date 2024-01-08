@@ -33,6 +33,14 @@ export class TaskController {
     return this.taskService.findAll();
   }
 
+  @Get('/false')
+  @ApiOperation({
+    summary: 'Get all task with done status false',
+  })
+  findAllFalse() {
+    return this.taskService.findAllFalse();
+  }
+
   @Get(':id')
   @ApiOperation({
     summary: 'Get one task by id',

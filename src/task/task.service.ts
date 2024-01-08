@@ -22,9 +22,14 @@ export class TaskService {
     return this.taskModel.find({ _id: id }).exec();
   }
 
+  findAllFalse() {
+    return this.taskModel.find({ done: false }).exec();
+  }
+
   async update(id: string, updateTaskDto: UpdateTaskDto) {
     const data = {
       ...updateTaskDto,
+      updatedAt: new Date(),
     } as Task;
 
     await this.taskModel.findByIdAndUpdate(id, data, { new: true });

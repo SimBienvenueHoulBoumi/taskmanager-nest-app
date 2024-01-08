@@ -15,4 +15,10 @@ export class CreateTaskDto {
     example: 'Task 1 description',
   })
   description: string;
+
+  @ApiProperty({
+    description: 'The done status of the task',
+    example: false,
+  })
+  done: boolean;
 }

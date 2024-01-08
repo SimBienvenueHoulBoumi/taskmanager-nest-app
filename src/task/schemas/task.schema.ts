@@ -9,6 +9,14 @@ export class Task {
   title: string;
   @Prop()
   description: string;
+  @Prop()
+  done: boolean;
+
+  @Prop({ default: Date.now })
+  createdAt: Date;
+
+  @Prop({ default: Date.now })
+  updatedAt: Date;
 }
 
 export const TaskSchema = SchemaFactory.createForClass(Task);
