@@ -7,7 +7,9 @@ async function bootstrap() {
 
   const config = new DocumentBuilder()
     .setTitle('Taskmanager Documentation')
-    .setDescription('Simple api test framework for taskmanager app')
+    .setDescription(
+      'Simple api test framework for taskmanager app without security',
+    )
     .setVersion('1.0')
     .build();
   const document = SwaggerModule.createDocument(app, config);
