@@ -1,4 +1,5 @@
 import { DataSource } from 'typeorm';
+import configuration from '../config/configuration';
 
 export const databaseProviders = [
   {
@@ -6,11 +7,11 @@ export const databaseProviders = [
     useFactory: async () => {
       const dataSource = new DataSource({
         type: 'postgres',
-        host: 'db',
-        port: 5432,
-        username: 'postgres',
-        password: 'postgres',
-        database: 'postgres',
+        host: configuration().database.host,
+        port: configuration().database.port,
+        username: configuration().database.username,
+        password: configuration().database.password,
+        database: configuration().database.database,
         entities: [__dirname + '/../**/*.entity{.ts,.js}'],
         synchronize: true,
       });
