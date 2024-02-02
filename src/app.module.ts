@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { MessagesModule } from './messages/messages.module';
+import { DatabaseModule } from './database/database.module';
 
 @Module({
   imports: [
@@ -9,6 +10,7 @@ import { MessagesModule } from './messages/messages.module';
       isGlobal: true,
     }),
     MessagesModule,
+    DatabaseModule,
   ],
   controllers: [],
   providers: [],
